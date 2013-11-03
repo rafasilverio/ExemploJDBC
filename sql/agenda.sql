@@ -1,0 +1,32 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+DROP SCHEMA IF EXISTS `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+DROP SCHEMA IF EXISTS `agenda` ;
+CREATE SCHEMA IF NOT EXISTS `agenda` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+USE `agenda` ;
+
+-- -----------------------------------------------------
+-- Table `agenda`.`contato`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `agenda`.`contato` ;
+
+CREATE  TABLE IF NOT EXISTS `agenda`.`contato` (
+  `codigo` INT(11) NOT NULL AUTO_INCREMENT ,
+  `nome` VARCHAR(50) NULL DEFAULT NULL ,
+  `telefone` VARCHAR(50) NULL DEFAULT NULL ,
+  `email` VARCHAR(50) NULL DEFAULT NULL ,
+  `dt_cad` DATE NULL DEFAULT NULL ,
+  `obs` TEXT NULL ,
+  PRIMARY KEY (`codigo`) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
